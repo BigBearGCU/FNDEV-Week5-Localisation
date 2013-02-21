@@ -1,0 +1,34 @@
+﻿<UserControl
+    x:Class="CustomControls.TrackViewerEditable"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CustomControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Name="dataTemplateTrack">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Data Template notice we are using text boxes and the binding on the Text element-->
+                    <TextBox Margin="0,0,0,0" Grid.Column="0" Text="{Binding TrackNo, Mode=TwoWay}" HorizontalAlignment="Left" HorizontalContentAlignment="Left"/>
+                    <TextBox Margin="10,0,0,0" Grid.Column="1" Text="{Binding Name, Mode=TwoWay}" HorizontalAlignment="Left" HorizontalContentAlignment="Left"/>
+                </Grid>
+            </DataTemplate>            
+        </Grid.Resources>
+        <Grid.Background>
+            <StaticResource ResourceKey="ApplicationPageBackgroundThemeBrush"/>
+        </Grid.Background>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,-100">
+            <ItemsControl HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding}" 
+                          ItemTemplate="{StaticResource dataTemplateTrack}" />
+        </ScrollViewer>
+    </Grid>
+</UserControl>

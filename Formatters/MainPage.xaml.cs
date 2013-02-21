@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Localisation
+namespace Formatters
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -24,6 +24,13 @@ namespace Localisation
         public MainPage()
         {
             this.InitializeComponent();
+            //Get Date time in the format we need
+            var dateTimeFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day dayofweek year");
+            dateLbl.Text = dateTimeFormatter.Format(DateTime.Now);
+            //Get currency, get the current user one
+            var userCurrency = Windows.System.UserProfile.GlobalizationPreferences.Currencies;
+            var currencyFormatter = new Windows.Globalization.NumberFormatting.CurrencyFormatter(userCurrency[0]);
+            currencyLbl.Text=currencyFormatter.Format(10.57);
         }
 
         /// <summary>
@@ -33,12 +40,6 @@ namespace Localisation
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-        }
-
-        private void testButton_Click(object sender, RoutedEventArgs e)
-        {
-            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
-            errorLbl.Text=loader.GetString("ErrorTest");
         }
     }
 }

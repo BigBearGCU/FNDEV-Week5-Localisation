@@ -1,19 +1,17 @@
 ﻿<Page
-    x:Class="Localisation.MainPage"
+    x:Class="Formatters.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Localisation"
+    xmlns:local="using:Formatters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <TextBlock x:Uid="Message" Text="Default" FontSize="40" />
-            <Button x:Name="testButton" x:Uid="Button" Content="Default" Click="testButton_Click" />
-            <TextBlock x:Name="errorLbl" />
+            <TextBlock x:Name="dateLbl" FontSize="30"/>
+            <TextBlock x:Name="currencyLbl" FontSize="30"/>
         </StackPanel>
-        
 
     </Grid>
 </Page>
