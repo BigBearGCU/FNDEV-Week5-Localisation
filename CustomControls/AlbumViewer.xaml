@@ -60,15 +60,15 @@
         </Grid.ColumnDefinitions>
         <!--Our various controls, note the data binding on the text element. Each one binds to an element in our object and the binding is two way -->
         <!--Two way allows the UI to update the model, and the model to UI -->
-        <TextBlock HorizontalAlignment="Left" Margin="1,10,0,0" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{StaticResource PageSubheaderTextStyle}"/>
+        <TextBlock x:Uid="AlbumText" HorizontalAlignment="Left" Margin="1,10,0,0" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{StaticResource PageSubheaderTextStyle}"/>
         <TextBox x:Name="albumNameTxtBox" Grid.Column="1" HorizontalAlignment="Left" Margin="110,18,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Width="265"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1,72,0,0" TextWrapping="Wrap" Text="Artist: " VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{StaticResource PageSubheaderTextStyle}"/>
+        <TextBlock x:Uid="ArtistText" HorizontalAlignment="Left" Margin="1,72,0,0" TextWrapping="Wrap" Text="Artist: " VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{StaticResource PageSubheaderTextStyle}"/>
         <TextBox x:Name="artistNameTxtBox" Grid.Column="1" HorizontalAlignment="Left" Margin="110,78,0,0" TextWrapping="Wrap" Text="{Binding Artist, Mode=TwoWay}" VerticalAlignment="Top" Width="265"/>
         <TextBlock HorizontalAlignment="Left" Margin="1,130,0,0" TextWrapping="Wrap" Text="Genre: " VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{StaticResource PageSubheaderTextStyle}"/>
-        <TextBox x:Name="genreTxtBox" Grid.Column="1" HorizontalAlignment="Left" Margin="110,138,0,0" TextWrapping="Wrap" Text="{Binding Genre, Mode=TwoWay}" VerticalAlignment="Top" Width="265"/>
+        <TextBox x:Uid="GenreText" x:Name="genreTxtBox" Grid.Column="1" HorizontalAlignment="Left" Margin="110,138,0,0" TextWrapping="Wrap" Text="{Binding Genre, Mode=TwoWay}" VerticalAlignment="Top" Width="265"/>
         <TextBlock HorizontalAlignment="Left" Margin="1,192,0,0" TextWrapping="Wrap" Text="Release: " VerticalAlignment="Top" Grid.ColumnSpan="2" Style="{StaticResource PageSubheaderTextStyle}"/>
         <!-- Notice the convertor on the binding-->
-        <TextBox x:Name="releaseTxtBox" Grid.Column="1" HorizontalAlignment="Left" Margin="110,200,0,0" TextWrapping="Wrap" Text="{Binding ReleaseDate, Converter={StaticResource DateConvertor}, ConverterParameter=\{0:d\}, Mode=TwoWay}" VerticalAlignment="Top" Width="265"/>
+        <TextBox x:Uid="ReleaseText" x:Name="releaseTxtBox" Grid.Column="1" HorizontalAlignment="Left" Margin="110,200,0,0" TextWrapping="Wrap" Text="{Binding ReleaseDate, Converter={StaticResource DateConvertor}, ConverterParameter=\{0:d\}, Mode=TwoWay}" VerticalAlignment="Top" Width="265"/>
 
     </Grid>
 
